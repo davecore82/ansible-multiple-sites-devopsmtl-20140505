@@ -1,0 +1,22 @@
+---
+# tasks file for common
+
+- name: Disallow root SSH access
+  lineinfile: dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
+  notify: Restart sshd
+
+# Configuration NTP
+
+- name: Configuration fichier ntp.conf
+  template: backup=yes src=ntp.conf.j2 dest=/etc/ntp.conf owner=root group=root mode=0644
+  notify: Restart ntpd
+
+- name: Configuration de NTP pour demarrer au boot
+  service: name=ntpd enabled=yes
+
+
+# Configuration DNS
+
+- name: Configuration fichier resolv.conf
+  template: backup=yes src=resolv.conf.j2 dest=/etc/resolv.conf owner=root group=root mode=0644
+

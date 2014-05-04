@@ -1,0 +1,14 @@
+ansiblemaster	ansible_ssh_host=ec2-54-187-4-178.us-west-2.compute.amazonaws.com
+ansible1	ansible_ssh_host=ec2-54-187-58-162.us-west-2.compute.amazonaws.com
+ansible2	ansible_ssh_host=ec2-54-186-148-170.us-west-2.compute.amazonaws.com
+
+[montreal]
+ansiblemaster
+ansible1
+
+[quebec]
+ansible2
+
+[webservers]
+ansible1
+ansible2
