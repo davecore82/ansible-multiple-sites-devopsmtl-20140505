@@ -65,4 +65,4 @@ nameserver {{ dns_server }}
 5. run ansible with new template changes
 ------------
 
-ansible-playbook --private-key=/home/dave/ec2.pem -u ec2-user site.yml -s
+	ansible-playbook --private-key=/home/dave/ec2.pem -u ec2-user site.yml -s
